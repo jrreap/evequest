@@ -15,7 +15,7 @@ export default class RoomScene extends Phaser.Scene {
 	}
 
 	preload() {
-		this.load.image('tileset_image', 'assets/tilemaps/tileset.png')
+		this.load.image('tileset_image', 'assets/tilemaps/dungeon.png')
     this.load.tilemapTiledJSON('tilemap', 'assets/tilemaps/main.json')
 		this.load.image('player', 'assets/tilemaps/character.png')
 	}

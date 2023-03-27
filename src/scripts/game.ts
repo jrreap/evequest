@@ -1,12 +1,11 @@
 import Phaser from 'phaser'
-import TestGhostScene from './scenes/TestGhostScene'
 import RoomScene from './scenes/RoomScene'
 
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.AUTO,
 	parent: 'app',
-	width: 800,
-	height: 600,
+	width: 1080,
+	height: 720,
 	physics: {
 		default: 'arcade',
 		arcade: {
