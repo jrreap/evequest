@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import Card from '../objects/Card'
+import { CARD_TYPES } from '../consts'
 
 export default class OpeningScene extends Phaser.Scene {
 
@@ -10,13 +11,17 @@ export default class OpeningScene extends Phaser.Scene {
 	}
 
 	generateCards = () => {
-		this.Cards.set('Bath_Bomb', new Card(this, 800, 500, 'Bath_Bomb', () => { console.log('Clicked!') }))
+		let tempX = 800
+		let tempY = 900
+
+		for (const card of CARD_TYPES) {
+			this.Cards.set(card.name, new Card(this, tempX, tempY, card.name, () => { console.log('Clicked!') }))
+			tempX += 90
+		}
 	}
 
 	create() {
 		this.generateCards()
-
-		this.add.image(800, 800, 'Bath_Bomb')
 	}
 
 	update () {

@@ -45,7 +45,7 @@ export default class PreloadScene extends Phaser.Scene {
 		})
 
 		this.load.image('Bath_Bomb', 'assets/cards/Bath_Bomb.png')
-		this.load.image('Carbs', 'assets/cards/Carbs.png')
+		this.load.image('Carb', 'assets/cards/Carb.png')
 		this.load.image('Repair_Dexcom', 'assets/cards/Repair_Dexcom.png')
 		this.load.image('Baby_Run_Charge', 'assets/cards/Baby_Run_Charge.png')
 
