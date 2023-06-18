@@ -6,8 +6,13 @@ import PreloadScene from './scenes/PreloadScene'
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.AUTO,
 	parent: 'app',
-	width: 1080,
-	height: 720,
+	width: 1920,
+	height: 1080,
+	scale: {
+		parent: 'app',
+		mode: Phaser.Scale.FIT,
+		autoCenter: Phaser.Scale.CENTER_BOTH,
+	},
 	physics: {
 		default: 'arcade',
 		arcade: {

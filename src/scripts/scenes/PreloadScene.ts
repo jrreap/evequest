@@ -15,11 +15,11 @@ export default class PreloadScene extends Phaser.Scene {
 		// Load the logo video before we display anything
 	}
 
-	setupProgressBar () {
+	setupProgressBar (centerX: number, centerY: number) {
 		this.progressBar = this.add.graphics();
 		this.progressBox = this.add.graphics();
 		this.progressBox.fillStyle(0x222222, 0.8);
-		this.progressBox.fillRect(260, 380, 320, 50);
+		this.progressBox.fillRect(centerX - 160, centerY - 25, 320, 50);
 	}
 
   create() {
@@ -30,12 +30,12 @@ export default class PreloadScene extends Phaser.Scene {
 		this.button = new Button(centerX, centerY + 85, 'CONTINUE', this, () => { this.scene.start('OpeningScene') }, 20, 10)
 		this.button.setVisible(false)
 
-		this.setupProgressBar()
+		this.setupProgressBar(centerX, centerY)
 
 		this.load.on('progress', (value: number) => {
 			this.progressBar.clear()
 			this.progressBar.fillStyle(0xffffff, 1)
-			this.progressBar.fillRect(270, 390, 300 * value, 30)
+			this.progressBar.fillRect(centerX - 160, centerY - 25, 300 * value, 30)
 		})
 
 		this.load.on('complete', () => {
@@ -43,6 +43,11 @@ export default class PreloadScene extends Phaser.Scene {
 			this.progressBox.destroy()
 			this.button.setVisible(true)
 		})
+
+		this.load.image('Bath_Bomb', 'assets/cards/Bath_Bomb.png')
+		this.load.image('Carbs', 'assets/cards/Carbs.png')
+		this.load.image('Repair_Dexcom', 'assets/cards/Repair_Dexcom.png')
+		this.load.image('Baby_Run_Charge', 'assets/cards/Baby_Run_Charge.png')
 
 		this.load.start()
   }
